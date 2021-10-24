@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<div class="container-fluid d-flex">
+    <div class="row">
+        <form method="post" action="/image">
+        {{#each gallery}}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="selectedName" value="{{this.name}}" id="{{this.name}}">
+            <label class="form-check-label" for="{{selectedName}}">
+                {{this.name}}
+            </label>
+        </div>
+        {{/each}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img src="{{hero.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{hero.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
